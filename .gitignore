@@ -53,4 +53,3 @@ pnpm-lock.yaml
 *.pid
 *.seed
 *.pid.lock
-vercel.json
