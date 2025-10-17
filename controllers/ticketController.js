@@ -1,4 +1,4 @@
-import Ticket from "../models/ticketModel.js";
+import Ticket, { statusEnum } from "../models/ticketModel.js";
 
 class TicketController {
     createTicket = async (req, res) => {
@@ -76,6 +76,11 @@ class TicketController {
         if(status===ticket.status){
             return res.status(400).json({
                 message: "Ticket status is the same"
+            });
+        }
+        if((status=== statusEnum.Completed || status=== statusEnum.Cancelled)){
+            return res.status(400).json({
+                message: "You cannot change the status of a completed or cancelled ticket"
             });
         }
         const updatedTicket = await Ticket.findByIdAndUpdate(id, { status }, { new: true });
