@@ -78,7 +78,7 @@ class TicketController {
                 message: "Ticket status is the same"
             });
         }
-        if((status=== statusEnum.Completed || status=== statusEnum.Cancelled)){
+        if(ticket.status=== statusEnum.Completed || ticket.status=== statusEnum.Cancelled){
             return res.status(400).json({
                 message: "You cannot change the status of a completed or cancelled ticket"
             });
