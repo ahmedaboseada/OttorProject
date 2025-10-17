@@ -22,7 +22,7 @@ app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors({
-    origin: 'ottor-seven.vercel.app', // Frontend server URL
+    origin: 'https://ottor-seven.vercel.app', // Frontend server URL
     credentials: true
 }))
 app.use(limiter)
